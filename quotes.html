@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes</title>
+    <link rel="stylesheet" href="quotes.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="start-screen">
+        <div class="start-content">
+            <h1 class="animated-title">Quotopia</h1>
+            <p class="animated-subtitle">A utopia of thoughts, crafted in quotes</p>
+            <button id="start-btn">Step In</button>
+        </div>
+    </div>
+
+    <div class="main-app hidden">
+        <div class="header">
+            <h1 class="wavy-title">Quotes</h1>
+            <div class="header-buttons">
+                <button id="theme-toggle-btn">
+                    <i class="fas fa-brush"></i> Themes
+                </button>
+                <button id="favorites-modal-btn">
+                    <i class="fas fa-heart"></i> Favorites
+                </button>
+            </div>
+        </div>
+
+        <div id="theme-modal" class="modal">
+            <div class="modal-content theme-modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Select Theme</h2>
+                <div class="theme-options">
+                    <div class="theme-option" data-theme="default">
+                        <span class="theme-color default"></span>
+                        Default Theme
+                    </div>
+                    <div class="theme-option" data-theme="dark">
+                        <span class="theme-color dark"></span>
+                        Dark Theme
+                    </div>
+                    <div class="theme-option" data-theme="light">
+                        <span class="theme-color light"></span>
+                        Light Theme
+                    </div>
+                    <div class="theme-option" data-theme="nature">
+                        <span class="theme-color nature"></span>
+                        Nature Theme
+                    </div>
+                    <div class="theme-option" data-theme="minimalistic">
+                        <span class="theme-color minimalistic"></span>
+                        Minimalistic Theme
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="category-filter">
+            <button class="category-btn active" data-category="all">All</button>
+            <button class="category-btn" data-category="motivational">Motivational</button>
+            <button class="category-btn" data-category="love">Love</button>
+            <button class="category-btn" data-category="success">Success</button>
+            <button class="category-btn" data-category="wisdom">Wisdom</button>
+            <button class="category-btn" data-category="humor">Humor</button>
+            <button class="category-btn" data-category="sad">Sad</button>
+        </div>
+
+        <div class="quote-container">
+            <div class="quote-box">
+                <div class="quote-content">
+                    <p id="quote-text">Click the button to get inspired!</p>
+                    <p id="quote-author"></p>
+                    <p id="quote-category"></p>
+                </div>
+                <div class="button-container">
+                    <button id="new-quote-btn">New Quote</button>
+                    <button id="copy-quote-btn">Copy Quote</button>
+                    <button id="favorite-quote-btn">
+                        <i class="far fa-heart"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="ai-quote-container">
+            <div class="ai-quote-box">
+                <h3>AI Quote Generator</h3>
+                <p class="ai-description">Ask AI to generate a custom quote based on your prompt</p>
+                
+                <div class="ai-input-section">
+                    <input type="text" 
+                           id="ai-prompt" 
+                           placeholder="Example: A motivational quote about coding..."
+                    >
+                    <button id="generate-ai-quote">
+                        <i class="fas fa-robot"></i> Generate
+                    </button>
+                </div>
+
+                <div class="ai-response-section">
+                    <div id="ai-quote-text" class="ai-quote-content hidden">
+                        <i class="fas fa-robot ai-icon"></i>
+                        <p id="ai-generated-quote"></p>
+                    </div>
+                    <div id="ai-loading" class="hidden">
+                        <div class="typing-indicator">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div id="favorites-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Your Favorite Quotes</h2>
+                <div id="favorites-list" class="favorites-grid"></div>
+                <button id="clear-favorites-btn">Clear All</button>
+            </div>
+        </div>
+    
+        <div id="notification" class="notification"></div>
+    
+        <script src="quotes.js"></script>
+    </body>
+    </html>
